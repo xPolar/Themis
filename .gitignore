@@ -1,0 +1,6 @@
+# Visual Studio Code settings folder should be ignored.
+.vscode/
+# Any files created by Python to cache data should be ignored.
+__pycache__/
+# Configuration file should be ignored.
+config.py
