@@ -14,6 +14,9 @@ class Prefix(commands.Cog):
     
     @commands.group()
     async def prefix(self, ctx):
+        """
+        View or set the prefix of the bot.
+        """
         if ctx.invoked_subcommand is None:
             prefix = config.cluster["servers"]["prefixes"].find_one({"_id": ctx.guild.id}) if ctx.guild != None else config.prefix
             embed = discord.Embed(

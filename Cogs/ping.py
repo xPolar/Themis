@@ -13,6 +13,9 @@ class Ping(commands.Cog):
     
     @commands.command(aliases = ["latency"])
     async def ping(self, ctx):
+        """
+        View the host and bot latency.
+        """
         t1 = time.perf_counter()
         await ctx.trigger_typing()
         t2 = time.perf_counter()
@@ -22,7 +25,6 @@ class Ping(commands.Cog):
             color = config.maincolor
         )
         if (round((t2 - t1) * 1000) > 500) or (round(self.bot.latency * 1000, 2) > 500):
-            print()
             print(f"{Style.BRIGHT}{Fore.RED}[WARNING]{Fore.WHITE} API latency is { round((t2 - t1) * 1000) }ms & host latency is { int(round(self.bot.latency * 1000, 2)) }ms")
         await ctx.send(embed = embed)
 
