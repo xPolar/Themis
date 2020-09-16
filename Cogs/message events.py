@@ -17,8 +17,6 @@ class MessageEvents(commands.Cog):
     
     @commands.Cog.listener()
     async def on_message(self, message):
-        
-        # Make sure the message isn't in a DM or by a bot.
         if message.guild != None and message.bot == False:
 
             # Ban member if the message they send has navis115 in it
